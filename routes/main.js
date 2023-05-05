@@ -217,8 +217,8 @@ module.exports = function(app, shopData) {
                // saving data in database
                let sqlquery = "INSERT INTO Photographers (Name, Company, PackPC, PackDC, NoCamPM, OtherInfo, Username) VALUES (?,?,?,?,?,?,?)";
                // execute sql query
-               let newrecord = [req.sanitize(req.body.nam), req.sanitize(req.body.comp),req.sanitize(req.body.packp), req.sanitize(req.body.packd),
-                   req.sanitize(req.body.nocamPM), req.sanitize(req.body.otherI), req.session.userId];
+               let newrecord = [req.sanitize(req.body.name), req.sanitize(req.body.company),req.sanitize(req.body.packpc), req.sanitize(req.body.packdc),
+                   req.sanitize(req.body.Nocampm), req.sanitize(req.body.otherinfo), req.session.userId];
                db.query(sqlquery, newrecord, (err, result,) => {
                    if (err) {
                        //if error return the error message
